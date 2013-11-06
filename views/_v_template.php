@@ -14,6 +14,10 @@
 </head>
 
 <body>	
+	<a href="/users/signup">Sign Up</a>
+    <a href="/users/profile">Profile</a>
+    <a href="/users/login">Log In</a>
+    <a href="/users/logout">Log Out</a>
 
 	<?php if(isset($content)) echo $content; ?>
 

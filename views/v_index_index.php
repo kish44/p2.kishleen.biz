@@ -1,8 +1,2 @@
-<h1>
-	Share your vacation ideas
-</h1>
-
-<p>
-	This is a blog where everyone can share their secret unique vacation ideas.
-</p>
+<h1>Welcome to <?=APP_NAME?><?php if($user) echo ', '.$user->first_name; ?></h1>
 
