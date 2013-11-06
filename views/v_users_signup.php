@@ -12,10 +12,19 @@
     Email<br>
     <input type='text' name='email'>
     <br><br>
+    
+    <?php if(isset($error)): ?>
+        <div class='error'>
+            Invalid email.
+        </div>
+        <br>
+    <?php endif; ?>
 
     Password<br>
     <input type='password' name='password'>
     <br><br>
+    
+    
 
     <input type='submit' value='Sign up'>
 
