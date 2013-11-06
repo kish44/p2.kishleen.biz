@@ -1,6 +1,11 @@
 
-<?php if(isset($user_name)): ?>
-    <h1>This is the profile for <?=$user_name?></h1>
-<?php else: ?>
-    <h1>No user specified</h1>
-<?php endif; ?>
+
+
+<h2>My Profile</h2>
+        
+        <!-- displays user's name and date joined -->
+        <h4>Name: <span><?=$user->first_name?> <?=$user->last_name?></span></h4>
+        <h4>Join Date: <span><?= date('F j, Y', $user->created) ?></span></h4>    
+        
+        <h4>Delete Account</h4>
+        Click<a href="/users/unsubscribe/"> here </a>if you wish to delete your account.
