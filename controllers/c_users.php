@@ -122,7 +122,7 @@ public function p_login() {
    public function profile($user_name = NULL) {
 	   
 	   if(!$this->user) {
-		   die("Please login to access this page");
+		   die('Please login to access this page. <a href="/users/login">Log In</a>');
 		}
 		
 		# Set up the View

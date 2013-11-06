@@ -7,6 +7,9 @@ body {
 	margin: 10%;
 	padding: 10%;
 }
+nav {
+	list-style-type: none;
+}
 h4 {
 	font-weight: normal;
 	color: #000;

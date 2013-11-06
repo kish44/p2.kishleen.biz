@@ -13,14 +13,36 @@
 	
 </head>
 
-<body>	
-	<a href="/users/signup">Sign Up</a>
-    <a href="/users/profile">Profile</a>
-    <a href="/users/login">Log In</a>
-    <a href="/users/logout">Log Out</a>
+<body>  
 
-	<?php if(isset($content)) echo $content; ?>
+    <nav>
 
-	<?php if(isset($client_files_body)) echo $client_files_body; ?>
+        <menu>
+
+            <!-- Menu for users who are logged in -->
+            <?php if($user): ?>
+    
+                <li><a href='/users/logout'>Logout</a></li>
+                <li><a href='/users/profile'>Profile</a></li>
+                <li><a href='/posts/add'>Add Post</a></li>
+                <li><a href='/posts/'>View Posts</a></li>
+                <li><a href='/posts/users'>Follow users</a></li>
+    
+            <!-- Menu options for users who are not logged in -->
+            <?php else: ?>
+    
+                <li><a href='/users/signup'>Sign up</a></li>
+                <li><a href='/users/login'>Log in</a></li>
+    
+            <?php endif; ?>
+
+    	</menu>
+
+    </nav>
+
+    <?php if(isset($content)) echo $content; ?>
+
+    <?php if(isset($client_files_body)) echo $client_files_body; ?>
+
 </body>
 </html>
