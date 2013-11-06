@@ -1,4 +1,4 @@
-<h1>Add Post></h1>
+<h1>Add Post</h1>
 
 <form method='POST' action='/posts/p_add'>
 
