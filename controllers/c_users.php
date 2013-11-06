@@ -44,6 +44,16 @@ class users_controller extends base_controller {
     else {
         # Insert this user into the database 
 		$user_id = DB::instance(DB_NAME)->insert("users", $_POST);
+		
+		// send an email a welcome message to the new user
+		// build a multi-dimension array of recipients of this email
+		$to[]    = Array("name" => $_POST['first_name'], "email" => $_POST['email']);
+		$from    = Array("name" => APP_NAME, "email" => APP_EMAIL);
+		$subject = "Welcome to KishBlog";
+		$body = View::instance('e_users_welcome');
+
+		// Send email
+		Email::send($to, $from, $subject, $body, true, '');
 	
 		# For now, just confirm they've signed up - 
 		# You should eventually make a proper View for this

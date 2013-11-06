@@ -9,6 +9,7 @@ class posts_controller extends base_controller {
         if(!$this->user) {
             die("Members only. <a href='/users/login'>Login</a>");
         }
+		
     }
 
     public function add() {
@@ -21,7 +22,24 @@ class posts_controller extends base_controller {
         echo $this->template;
 
     }
-
+	
+	public function delete($post_created, $post_user_id) {
+		$q= 'SELECT
+		*
+		FROM posts
+		WHERE created = '.$post_created.' AND user_id ='.$post_user_id;
+		 
+		$post = DB::instance(DB_NAME)->select_row($q);
+		$post_id = $post['post_id'];
+		 
+		 
+		DB::instance(DB_NAME)->delete('posts','WHERE post_id ='.$post_id);
+		 
+		 
+		Router::redirect('/posts');
+	} 
+	
+	
     public function p_add() {
 
         # Associate this post with this user
